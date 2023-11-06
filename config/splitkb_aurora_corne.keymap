@@ -12,24 +12,33 @@
 #define QUERTY 3
 
 / {
+    behaviors {
+        td_alts: td_alts {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALTS";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>, <&kp RALT>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp F             &kp P  &kp B              &kp J        &kp L  &kp U         &kp Y    &kp SEMI  &kp MINUS
-&kp BSPC   &kp A  &kp R  &kp S             &kp T  &kp G              &kp M        &kp N  &kp E         &kp I    &kp O     &kp EQUAL
-&kp LCTRL  &kp Z  &kp X  &kp C             &kp D  &kp V              &kp K        &kp H  &kp COMMA     &kp DOT  &kp FSLH  &kp SQT
-                         &kp LEFT_COMMAND  &mo 1  &mt LSHFT SPACE    &mt RET TAB  &mo 2  &kp LEFT_ALT
+&kp ESC    &kp Q  &kp W  &kp F             &kp P  &kp B              &kp J        &kp L  &kp U      &kp Y    &kp SEMI  &kp MINUS
+&kp BSPC   &kp A  &kp R  &kp S             &kp T  &kp G              &kp M        &kp N  &kp E      &kp I    &kp O     &kp EQUAL
+&kp LCTRL  &kp Z  &kp X  &kp C             &kp D  &kp V              &kp K        &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp SQT
+                         &kp LEFT_COMMAND  &mo 1  &mt LSHFT SPACE    &mt RET TAB  &mo 2  &td_alts
             >;
         };
 
         lower_layer {
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &none
-&trans  &none   &none   &none   &none   &none     &none   &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &none
-&trans  &none   &none   &none   &none   &none     &none   &none     &none     &none   &none      &none
-                        &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &mt LS(N1) N1  &mt LS(N2) N2  &mt LS(N3) N3  &mt LS(N4) N4  &mt LS(N5) N5    &mt LS(N6) N6  &mt LS(N7) N7  &mt LS(N8) N8  &mt LS(N9) N9  &mt LS(N0) N0  &none
+&trans  &none          &none          &none          &none          &none            &none          &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &none
+&trans  &none          &none          &none          &none          &none            &none          &none          &none          &none          &none          &none
+                                      &trans         &trans         &trans           &trans         &trans         &trans
             >;
         };
 
@@ -44,10 +53,10 @@
 
         func_layer {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &none         &none           &none   &none            &none            &kp K_MUTE       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
-&none                 &none                 &none                              &none                                   &none         &none           &none   &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &none              &kp C_BACKLIGHT_TOGGLE
-&bt BT_CLR            &bt BT_SEL 0          &bt BT_SEL 1                       &bt BT_SEL 2                            &bt BT_SEL 3  &bt BT_SEL 4    &none   &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &none              &rgb_ug RGB_TOG
-                                                                               &trans                                  &trans        &trans          &trans  &trans           &trans
+&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS  &none         &none         &none           &none   &none            &none            &kp K_MUTE       &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+&none                 &none                 &none                                   &none         &none         &none           &none   &rgb_ug RGB_BRI  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &none              &kp C_BACKLIGHT_TOGGLE
+&bt BT_CLR            &bt BT_SEL 0          &bt BT_SEL 1                            &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &rgb_ug RGB_BRD  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &none              &rgb_ug RGB_TOG
+                                                                                    &trans        &trans        &trans          &trans  &trans           &trans
             >;
         };
     };
