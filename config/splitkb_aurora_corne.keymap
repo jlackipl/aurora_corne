@@ -22,6 +22,8 @@
             label = "Q_ESC";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp ESC>;
+
+            tapping-term-ms = <300>;
         };
     };
 
@@ -30,7 +32,7 @@
 
         default_layer {
             bindings = <
-&kp ESC         &kp Q   &kp W  &kp F             &kp P  &kp B        &kp J      &kp L  &kp U      &kp Y    &kp SEMI  &kp SQT
+&kp TAB         &Q_ESC  &kp W  &kp F             &kp P  &kp B        &kp J      &kp L  &kp U      &kp Y    &kp SEMI  &kp SQT
 &kp LEFT_SHIFT  &kp A   &kp R  &kp S             &kp T  &kp G        &kp M      &kp N  &kp E      &kp I    &kp O     &kp EQUAL
 &kp LCTRL       &kp Z   &kp X  &kp C             &kp D  &kp V        &kp K      &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp MINUS
                                &kp LEFT_COMMAND  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &td_alts
@@ -40,7 +42,7 @@
         lower_layer {
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7  &kp F8    &kp F9    &kp F10  &kp F11    &kp F12
-&kp TAB &none   &none   &none   &none   &none     &none   &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none
+&trans  &none   &none   &none   &none   &none     &none   &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &none
 &trans  &none   &none   &none   &none   &none     &none   &none     &none     &none    &none      &none
                         &trans  &trans  &trans    &trans  &trans    &trans
             >;
@@ -50,7 +52,7 @@
             bindings = <
 &trans  &none  &kp N1  &kp N2  &kp N3  &none     &kp LEFT_PARENTHESIS  &kp LBKT   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS
 &trans  &none  &kp N4  &kp N5  &kp N6  &none     &kp MINUS             &kp EQUAL  &kp SEMI        &kp SQT          &kp GRAVE          &kp BSPC
-&none   &none  &kp N7  &kp N8  &kp N9  &kp N0    &kp BSLH              &none      &kp COMMA       &kp DOT          &kp FSLH           &kp BSLH
+&trans  &none  &kp N7  &kp N8  &kp N9  &kp N0    &kp BSLH              &kp GRAVE  &kp COMMA       &kp DOT          &kp FSLH           &kp BSLH
                        &trans  &trans  &trans    &trans                &trans     &trans
             >;
         };
