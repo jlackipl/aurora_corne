@@ -23,7 +23,7 @@
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp ESC>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <250>;
         };
     };
 
@@ -50,10 +50,10 @@
 
         raise_layer {
             bindings = <
-&trans  &none  &kp N1  &kp N2  &kp N3  &none     &kp LEFT_PARENTHESIS  &kp LBKT   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS
-&trans  &none  &kp N4  &kp N5  &kp N6  &none     &kp MINUS             &kp EQUAL  &kp SEMI        &kp SQT          &kp GRAVE          &kp BSPC
-&trans  &none  &kp N7  &kp N8  &kp N9  &kp N0    &kp BSLH              &kp GRAVE  &kp COMMA       &kp DOT          &kp FSLH           &kp BSLH
-                       &trans  &trans  &trans    &trans                &trans     &trans
+&trans  &kp ESC  &kp N1  &kp N2  &kp N3  &none     &kp LEFT_PARENTHESIS  &kp LBKT   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS
+&trans  &none    &kp N4  &kp N5  &kp N6  &none     &kp MINUS             &kp EQUAL  &kp SEMI        &kp SQT          &kp GRAVE          &kp BSPC
+&trans  &none    &kp N7  &kp N8  &kp N9  &kp N0    &kp BSLH              &kp GRAVE  &kp COMMA       &kp DOT          &kp FSLH           &kp BSLH
+                         &trans  &trans  &trans    &trans                &trans     &trans
             >;
         };
 
